@@ -10,6 +10,7 @@ Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-%{version
 # Source0-md5:	c5d3ac97f505e130d46788e5704f7b40
 URL:		http://www.nessus.org/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	nessus-devel
 BuildRequires:	nessus-libs-devel
