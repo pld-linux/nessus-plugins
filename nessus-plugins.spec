@@ -9,14 +9,15 @@ Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	4f03c34f37c3505ea3a834f15a27afb6
 URL:		http://www.nessus.org/
-Requires:	nessusd
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	nessus-devel
 BuildRequires:	nessus-libs-devel
-BuildRequires:	openssl-devel >= 0.9.7
-BuildRequires:	libpcap-devel
+Requires:	nessusd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# needed to use correct paths
+%define		_localstatedir		/var/lib
 
 %description
 Plugins for Nessus - a free, powerful, up-to-date and easy to use
@@ -39,9 +40,9 @@ u¿yciu zdalnego skanera zabezpieczeñ.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,5 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
-%{_libdir}/nessus
+%{_libdir}/nessus/plugins/*
+%{_libdir}/nessus/plugins_factory
 %{_mandir}/man?/*
