@@ -1,7 +1,7 @@
 Summary:	Nessus plugins
 Summary(pl):	Wtyczki do Nessusa
 Name:		nessus-plugins
-Version:	2.0.3
+Version:	2.0.4
 Release:	1
 License:	GPL
 Group:		Networking
