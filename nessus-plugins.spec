@@ -10,7 +10,6 @@ Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-%{version
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.nessus.org/
 BuildRequires:	autoconf
-BuildRequires:	libtool
 BuildRequires:	nessus-devel
 BuildRequires:	nessus-libs-devel
 BuildRequires:	openssl-devel
@@ -22,7 +21,7 @@ Plugins for Nessus - a free, powerful, up-to-date and easy to use
 remote security scanner.
 
 %description -l pl
-Biblioteki dla Nessusa - wolnego, potê¿nego, aktualnego i ³atwego w
+Wtyczki do Nessusa - wolnego, potê¿nego, aktualnego i ³atwego w
 u¿yciu zdalnego skanera zabezpieczeñ.
 
 %prep
@@ -45,9 +44,7 @@ install -d $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/nessus/*
 %{_libdir}/nessus
