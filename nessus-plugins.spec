@@ -13,7 +13,7 @@ Requires:		nessusd
 BuildRequires:	autoconf
 BuildRequires:	nessus-devel
 BuildRequires:	nessus-libs-devel
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	libpcap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
