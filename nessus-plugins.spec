@@ -7,9 +7,9 @@ License:	GPL
 Group:		Networking
 Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-%{version}.tar.gz
-#Soutce0-md5:	4f03c34f37c3505ea3a834f15a27afb6
+# Source0-md5:	4f03c34f37c3505ea3a834f15a27afb6
 URL:		http://www.nessus.org/
-Requires:		nessusd
+Requires:	nessusd
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	nessus-devel
