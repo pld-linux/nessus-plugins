@@ -1,13 +1,13 @@
 Summary:	Nessus plugins
 Summary(pl):	Wtyczki do Nessusa
 Name:		nessus-plugins
-Version:	2.2.3
+Version:	2.2.4
 Release:	1
 License:	GPL
 Group:		Networking
 Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-GPL-%{version}.tar.gz
-# Source0-md5:	0fce60679c0c40a7d60d9b03427bbc27
+# Source0-md5:	1e77107aa358ae9b9eba22154c1ca48d
 URL:		http://www.nessus.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
