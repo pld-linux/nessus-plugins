@@ -12,6 +12,7 @@ URL:		http://www.nessus.org/
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	nessus-devel
+BuildRequires:	nessus-libs-devel
 BuildRequires:	openssl-devel
 BuildRequires:	libpcap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%{_libdir}/nessus
