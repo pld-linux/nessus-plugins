@@ -9,6 +9,7 @@ Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.nessus.org/
+Requires:		nessusd
 BuildRequires:	autoconf
 BuildRequires:	nessus-devel
 BuildRequires:	nessus-libs-devel
