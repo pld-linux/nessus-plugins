@@ -20,7 +20,7 @@ Plugins for Nessus - a free, powerful, up-to-date and easy to use
 remote security scanner.
 
 %description -l pl
-Biblioteki doa Nessusa - wolnego, potê¿nego, aktualnego i ³atwego w
+Biblioteki dla Nessusa - wolnego, potê¿nego, aktualnego i ³atwego w
 u¿yciu zdalnego skanera zabezpieczeñ.
 
 %prep
