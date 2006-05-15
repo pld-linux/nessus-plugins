@@ -1,13 +1,13 @@
 Summary:	Nessus plugins
 Summary(pl):	Wtyczki do Nessusa
 Name:		nessus-plugins
-Version:	2.2.5
+Version:	2.2.7
 Release:	1
 License:	GPL
 Group:		Networking
 Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-GPL-%{version}.tar.gz
-# Source0-md5:	4b2710dfb7d7957145b6f101edfba7a7
+# Source0-md5:	2e51f5ad96dd55888e835382a61de585
 URL:		http://www.nessus.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -45,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# let strip succeed
+chmod 755 $RPM_BUILD_ROOT%{_libdir}/nessus/plugins/*.nes
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -52,6 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
-%{_libdir}/nessus/plugins/*
+%{_libdir}/nessus/plugins/*.inc
+%{_libdir}/nessus/plugins/*.nasl
+%attr(755,root,root) %{_libdir}/nessus/plugins/*.nes
 %{_libdir}/nessus/plugins_factory
 %{_mandir}/man?/*
