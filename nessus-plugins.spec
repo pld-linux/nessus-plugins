@@ -1,5 +1,5 @@
 Summary:	Nessus plugins
-Summary(pl):	Wtyczki do Nessusa
+Summary(pl.UTF-8):   Wtyczki do Nessusa
 Name:		nessus-plugins
 Version:	2.2.7
 Release:	1
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Plugins for Nessus - a free, powerful, up-to-date and easy to use
 remote security scanner.
 
-%description -l pl
-Wtyczki do Nessusa - darmowego, potê¿nego, aktualnego i ³atwego w
-u¿yciu zdalnego skanera zabezpieczeñ.
+%description -l pl.UTF-8
+Wtyczki do Nessusa - darmowego, potÄ™Å¼nego, aktualnego i Å‚atwego w
+uÅ¼yciu zdalnego skanera zabezpieczeÅ„.
 
 %prep
 %setup -q -n %{name}
