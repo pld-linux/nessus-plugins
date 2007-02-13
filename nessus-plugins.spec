@@ -1,5 +1,5 @@
 Summary:	Nessus plugins
-Summary(pl.UTF-8):   Wtyczki do Nessusa
+Summary(pl.UTF-8):	Wtyczki do Nessusa
 Name:		nessus-plugins
 Version:	2.2.7
 Release:	1
