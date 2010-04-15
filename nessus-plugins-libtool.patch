@@ -1,0 +1,70 @@
+diff -ur nessus-plugins/pf/Makefile nessus-plugins-libtool/pf/Makefile
+--- nessus-plugins/pf/Makefile	1999-09-05 16:28:21.000000000 +0200
++++ nessus-plugins-libtool/pf/Makefile	2010-04-15 14:01:07.847311689 +0200
+@@ -5,8 +5,8 @@
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c
+-	$(SHELL) libtool $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(SHELL) libtool $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
++	$(SHELL) libtool --mode=compile $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(SHELL) libtool --mode=link $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
+ 	-rpath $(prefix)/plugins/
+ 	
+ clean :
+diff -ur nessus-plugins/plugins/find_service/Makefile nessus-plugins-libtool/plugins/find_service/Makefile
+--- nessus-plugins/plugins/find_service/Makefile	1999-09-05 16:28:21.000000000 +0200
++++ nessus-plugins-libtool/plugins/find_service/Makefile	2010-04-15 14:00:10.919124226 +0200
+@@ -4,8 +4,8 @@
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
++	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(LIBTOOL) --mode=link $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
+ 	-rpath $(rootdir)/bin/plugins
+ 	../install_plug $(PLUGNAME) $(rootdir)
+ clean :
+diff -ur nessus-plugins/plugins/nessus_tcp_scanner/Makefile nessus-plugins-libtool/plugins/nessus_tcp_scanner/Makefile
+--- nessus-plugins/plugins/nessus_tcp_scanner/Makefile	2005-08-19 11:08:51.000000000 +0200
++++ nessus-plugins-libtool/plugins/nessus_tcp_scanner/Makefile	2010-04-15 14:00:23.460186421 +0200
+@@ -7,8 +7,8 @@
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c 
+-	$(LIBTOOL) $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) -lm $(LIBUTIL) \
++	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(LIBTOOL) --mode=link $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) -lm $(LIBUTIL) \
+ 	-rpath $(rootdir)/bin/plugins
+ 	../install_plug $(PLUGNAME) $(rootdir)
+ clean :
+diff -ur nessus-plugins/plugins/ssl_ciphers/Makefile nessus-plugins-libtool/plugins/ssl_ciphers/Makefile
+--- nessus-plugins/plugins/ssl_ciphers/Makefile	2002-02-08 21:31:29.000000000 +0100
++++ nessus-plugins-libtool/plugins/ssl_ciphers/Makefile	2010-04-15 14:00:39.245249118 +0200
+@@ -4,8 +4,8 @@
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
++	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(LIBTOOL) --mode=link $(CC) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
+ 	-rpath $(rootdir)/bin/plugins
+ 	../install_plug $(PLUGNAME) $(rootdir)
+ clean :
+diff -ur nessus-plugins/plugins/synscan/Makefile nessus-plugins-libtool/plugins/synscan/Makefile
+--- nessus-plugins/plugins/synscan/Makefile	2003-02-06 04:27:19.000000000 +0100
++++ nessus-plugins-libtool/plugins/synscan/Makefile	2010-04-15 14:00:50.753125161 +0200
+@@ -4,8 +4,8 @@
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(LIBTOOL) $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
++	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(LIBTOOL) --mode=link $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
+ 	-rpath $(rootdir)/bin/plugins
+ 	../install_plug $(PLUGNAME) $(rootdir)
+ clean :

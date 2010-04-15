@@ -2,12 +2,13 @@ Summary:	Nessus plugins
 Summary(pl.UTF-8):	Wtyczki do Nessusa
 Name:		nessus-plugins
 Version:	2.2.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking
 Vendor:		Nessus Project
 Source0:	ftp://ftp.nessus.org/pub/nessus/nessus-%{version}/src/%{name}-GPL-%{version}.tar.gz
 # Source0-md5:	2e51f5ad96dd55888e835382a61de585
+Patch0:		%{name}-libtool.patch
 URL:		http://www.nessus.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,6 +31,7 @@ użyciu zdalnego skanera zabezpieczeń.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 %{__libtoolize}
